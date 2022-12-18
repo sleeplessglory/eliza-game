@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset=utf-8>
+<html style="padding: 1% 5% 5%;
+             width: 100%; height: 100%; box-sizing: border-box; background-color: black">
+<body style="width: 100%; height: 100%">
+
+<script>
+    let value_of_input = null;
+
+    function get_field_input() {
+        const field_input = document.getElementById('field_input');
+        value_of_input = field_input.value;
+        field_input.value = null;
+    }
+
+    function search(element) {
+        if (event.key === 'Enter') {
+            get_field_input();
+        }
+    }
+</script>
+
+<div style="width: 100%; height: 100%; resize: none;
+            display: flex; flex-flow: column;
+            background-color: black; border-color: black; color: white">
+    <textarea id="output"
+              style="resize: none; width: 100%; height: 100%; box-shadow: none; outline: none;
+                     flex: 1 1 auto; border-color: white; border-radius: 3px; margin-bottom: 8px;
+                     background-color: black; color: white"></textarea>
+    <div style="width: 100%; flex: 0 1 auto; display: flex">
+        <div style="flex: 0 1 auto; margin-right: 4px; font-size: 24px">></div>
+        <input type="text" id="field_input" onkeydown="search(this)" placeholder="Введите значение..."
+               style="background-color: black; color: white; border: none; box-shadow: none; outline: none;
+                      width: 100%; flex: 1 1 auto; font-size: 24px">
+    </div>
+</div>
+
+{{{ SCRIPT }}}
+
+</body>
+</html>
